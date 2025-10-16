@@ -3,9 +3,14 @@ main {
     width: min(100%, 1400px);
     padding: 4%;
     margin: auto;
-    display: flex;
-    justify-content: center;
     /* margin: 0px 8%; */
+}
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 4rem
 }
 
 .card {
