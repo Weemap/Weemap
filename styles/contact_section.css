@@ -1,0 +1,28 @@
+#contact {
+    padding: 20px;
+
+}
+
+#contact div {
+    margin: clamp(20px, 5%, 120px) auto;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    input {
+        width: 100%;
+        padding: 10px;
+    }
+
+    input[type=number]::-webkit-inner-spin-button { 
+        -webkit-appearance: none;
+    }
+
+    button {
+        margin-top: 10px;
+        width: 100%;
+    }
+}

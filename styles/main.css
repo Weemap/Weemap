@@ -1,6 +1,6 @@
 main {
     /* background-color: aquamarine; */
-    /* width: min(100%, 1400px); */
+    width: min(100%, 1400px);
     /* padding: 4%; */
     margin: auto;
     /* margin: 0px 8%; */
@@ -32,14 +32,3 @@ main {
         margin-top: 1rem;
     }
 }
-
-/* @media screen and (min-width: 800px) {
-    .img-title-and-p {
-        display: flex;
-    }
-
-    .img-title-and-p > img {
-        width: 300px;
-    }
-}    */
-
