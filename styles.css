@@ -1,0 +1,31 @@
+@import "styles/hero_section.css";
+@import "styles/main.css";
+@import "styles/contact_section.css";
+@import "styles/about.css";
+
+@import "styles/components/button.css";
+@import "styles/components/citation.css";
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+    --hover-brightness: 115%;
+    --primary: #F86A09;
+    --secondary: #152A3F;
+    --text-color: #e0e6de;
+
+    scroll-behavior: smooth;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    max-width: 1440px;
+}
