@@ -13,6 +13,7 @@
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
+    <link href="/your-path-to-uicons/css/uicons-[your-style].css" rel="stylesheet">
 
     <link rel="stylesheet" href ="styles/styles.css">
     <link rel="stylesheet" href ="styles/main.css">
@@ -69,6 +70,7 @@
         </nav>
     </header> -->
 
+
     <main>
         <section id="hero">
             <div class="animate__animated animate__fadeIn">
@@ -76,61 +78,64 @@
                 <!-- <h1>Você no controle dos seus processos</h1> -->
                 <h1>Gestão de processos para o seu negócio</h1>
                 <p>Padronize e otimize seus processos da forma mais eficiente com a Weemap</p>
-                <button class="btn-default">
+                <button class="btn">
                     <a href="#contact">Fale conosco</a>
                 </button>
             </div>
         </section>
 
         <section id="about" class="animate__animated animate__fadeIn">
-            <img src="assets/about.png"/>
+            <div class="content">
+                <img src="assets/about.png"/>
 
-            <div>
-                <h2>Olá! Sou a Aline Silva</h2>
-                <p>
-                    <em> Founder da Weemap Gestão e Mapeamento de Processos, brasileira e empreendora .</em>
-                </p>
-                <br />
-                <p>
-                    Trabalhou em diversas empresas gerindo e organizando processos internos trazendo padronização e 
-                    melhorias para diversas áreas e setores de médias e grandes empresas.
-                </p>
+                <div class="about_ceo">
+                    <h2>Conheça nossa CEO</h2>
+                    <p>
+                        <strong>Aline Silva</strong>, <em>Founder da Weemap Gestão e Mapeamento de Processos, brasileira e empreendora.</em>
+                    </p>
+                    
+                    <p>
+                        Trabalhou em diversas empresas gerindo e organizando processos internos trazendo padronização e 
+                        melhorias para diversas áreas e setores de médias e grandes empresas.
+                    </p>
 
-                <div style="position: relative;">
                     <blockquote class="citation">
-                       "A <strong>Weemap</strong> é a tradução da minha paixão por gestão e mapeamento de processos, e nela conto com um time enxuto de profissionais capacitados, engajados e comprometidos a entregar o melhor, sempre!"
+                        "A <strong>Weemap</strong> é a tradução da minha paixão por gestão e mapeamento de processos, e nela conto com um time enxuto de profissionais capacitados, engajados e comprometidos a entregar o melhor, sempre!"
                         - <em>Aline Silva</em>
                     </blockquote>
                 </div>
             </div>
+
         </section>
 
         <section id="contact">
-            <div>
-                <h2>Fale Conosco</h2>
-                <p>Comece hoje a melhorar os processos da sua empresa de forma eficiente com a nossa equipe</p>
+            <div class="content">
+                <div id="talk_to_us">
+                    <h2>Fale Conosco</h2>
+                    <p>Comece hoje a melhorar os processos da sua empresa de forma eficiente com a nossa equipe</p>
+                </div>
+
+                <form>
+                    <label>
+                        Nome: 
+                        <input name="name"/>
+                    </label>
+
+                    <label>
+                        Email: 
+                        <input type="email" name="email" />
+                    </label>
+
+                    <label>
+                        Telefone (opcional): 
+                        <input type="number" name="phone" />
+                    </label>
+
+                    <button class="btn" type="submit">
+                        Enviar
+                    </button>
+                </form>
             </div>
-
-            <form>
-                <label>
-                    Nome: 
-                    <input name="name"/>
-                </label>
-
-                <label>
-                    Email: 
-                    <input type="email" name="email" />
-                </label>
-
-                <label>
-                    Telefone (opcional): 
-                    <input type="number" name="phone" />
-                </label>
-
-                <button class="btn-default" type="submit">
-                    Enviar
-                </button>
-            </form>
         </section>
 
         <!-- <div class="cards">

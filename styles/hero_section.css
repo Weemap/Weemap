@@ -1,14 +1,11 @@
 #hero {
     background-color: var(--secondary);
     color: var(--text-color);
-
-    display: flex;
-    justify-content: center;
 }
 
 #hero div {
     padding: 20px;
-    margin: clamp(20px, 5%, 120px) auto;
+    margin: clamp(20px, 5%, 120px) 0;
 }
 
 

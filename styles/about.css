@@ -1,34 +1,16 @@
-#about {
+#about div {
     padding: 20px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    gap: 20px;
     flex-wrap: wrap;
 }
 
-#about div {
-    margin-top: 20px;
-}
-
-#about img {
+#about div img {
     width: 300px;
+    object-fit: contain;
 }
 
-.citation {
-    margin: 20px 0;
-    padding: 20px 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.2);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-.citation::before {
-    position: absolute;
-
-    top: 0;
-    bottom: 0;
-    left: calc(50% - 60px);
-
-    content: " ";
-    border-bottom: 3px solid var(--primary);
-    border-top: 3px solid var(--primary);
-    width: 120px;
+#about div .about_ceo {
+    max-width: 500px;
 }
