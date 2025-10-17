@@ -2,16 +2,24 @@
     background-color: var(--secondary);
     color: var(--text-color);
 
-    height: 70vh;
     display: flex;
     justify-content: center;
 }
 
 #hero div {
     padding: 20px;
-    margin: clamp(20px, 5%, 120px) auto 0;
+    margin: clamp(20px, 5%, 120px) auto;
 }
 
-#hero > div > button {
-    margin-top: 1rem;
+
+#hero div img {
+    margin-bottom: 10px;
 }
+
+#hero div h1 {
+}
+
+#hero div p {
+    margin-bottom: 30px;
+}
+
