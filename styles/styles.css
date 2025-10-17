@@ -8,6 +8,8 @@
     --primary: #F86A09;
     --secondary: #152A3F;
     --text-color: #e0e6de;
+
+    scroll-behavior: smooth;
 }
 
 .btn-default {
@@ -22,7 +24,14 @@
     box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: filter .3s ease;
+
+    a {
+        text-decoration: none;
+        color: white
+    }
 }
+
+
 
 .btn-default:hover {
     background-color: var(--primary);
