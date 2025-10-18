@@ -1,17 +1,20 @@
-import { exec, execSync } from "child_process";
-import { copyFile, mkdir, rm, rmdir, cp } from "fs";
+import { execSync } from "child_process";
+import { copyFileSync, readdirSync, cpSync } from "fs";
 
 function showError(e) {
     if (e) throw e
 }
 
 (() => {
-    exec("esbuild styles.css --bundle --minify --outfile=/build/styles.css");
-    exec("esbuild scripts.js --bundle --minify --outfile=/build/scripts.js");
-    copyFile("index.html", "./build/index.html", showError);
-    cp("assets", "./build/assets", { recursive: true }, showError)
+    execSync("esbuild styles.css --bundle --minify --outfile=/build/styles.css");
+    execSync("esbuild scripts.js --bundle --minify --outfile=/build/scripts.js");
+    copyFileSync("index.html", "./build/index.html");
+    cpSync("assets", "./build/assets", { recursive: true }, showError)
     
-    exec("tree -h");
+    const files = readdirSync("./build", { recursive: true });
+    console.log("📁 Arquivos na pasta build:");
+    files.forEach(file => console.log(" -", file));
+
     console.log("✅ Build complete!");
 })()
 
