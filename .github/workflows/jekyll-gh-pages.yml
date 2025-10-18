@@ -40,10 +40,8 @@ jobs:
           node-version: '18'
       - name: Install Node.js dependencies
         run: npm install
-        working-directory: ./build
       - name: Run Node.js build script
         run: npm run build
-        working-directory: ./build
         
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
