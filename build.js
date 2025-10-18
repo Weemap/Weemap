@@ -6,12 +6,12 @@ function showError(e) {
 }
 
 (() => {
-    execSync("esbuild styles.css --bundle --minify --outfile=/build/styles.css");
-    execSync("esbuild scripts.js --bundle --minify --outfile=/build/scripts.js");
-    copyFileSync("index.html", "./build/index.html");
-    cpSync("assets", "./build/assets", { recursive: true }, showError)
+    execSync("esbuild styles.css --bundle --minify --outfile=build/styles.css");
+    execSync("esbuild scripts.js --bundle --minify --outfile=build/scripts.js");
+    copyFileSync("index.html", "build/index.html");
+    cpSync("assets", "build/assets", { recursive: true }, showError)
     
-    const files = readdirSync("./build", { recursive: true });
+    const files = readdirSync("build", { recursive: true });
     console.log("📁 Arquivos na pasta build:");
     files.forEach(file => console.log(" -", file));
 
