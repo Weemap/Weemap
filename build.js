@@ -9,6 +9,7 @@ function showError(e) {
     exec("esbuild styles.css --bundle --minify --outfile=/build/styles.css");
     exec("esbuild scripts.js --bundle --minify --outfile=/build/scripts.js");
     copyFile("index.html", "./build/index.html", showError);
+    copyFile(".htaccess", "./build/.htaccess", showError);
     cp("assets", "./build/assets", { recursive: true }, showError)
 
     console.log("✅ Build complete!");
