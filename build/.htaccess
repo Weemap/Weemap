@@ -1,10 +1,10 @@
 <IfModule mod_expires.c>
     ExpiresActive On
 
-    ExpiresByType application/javascript "access plus 10 minutes"
-    ExpiresByType text/javascript "access plus 10 minutes"
+    ExpiresByType application/javascript "access plus 10 hours"
+    ExpiresByType text/javascript "access plus 10 hours"
 
-    ExpiresByType text/css "access plus 10 minutes"
+    ExpiresByType text/css "access plus 10 hours"
 
-    ExpiresByType image/webp "access plus 10 minutes"
+    ExpiresByType image/webp "access plus 10 hours"
 </IfModule>
