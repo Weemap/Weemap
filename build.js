@@ -10,7 +10,8 @@ function showError(e) {
     exec("esbuild scripts.js --bundle --minify --outfile=/build/scripts.js");
     copyFile("index.html", "./build/index.html", showError);
     cp("assets", "./build/assets", { recursive: true }, showError)
-
+    
+    exec("tree -h");
     console.log("✅ Build complete!");
 })()
 
