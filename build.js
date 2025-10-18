@@ -17,12 +17,3 @@ function showError(e) {
 
     console.log("✅ Build complete!");
 })()
-
-// Run esbuild
-
-
-// // // Copy HTML
-// // 
-
-// // // Copy assets
-// // fs.cp("assets", "build/assets", { recursive: true });
