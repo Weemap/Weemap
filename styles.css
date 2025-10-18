@@ -26,6 +26,11 @@ section {
     justify-content: center;
 }
 
+section div {
+    padding: 20px;
+    margin: clamp(20px, 5%, 120px) 0;
+}
+
 .content {
     max-width: 1440px;
 }
