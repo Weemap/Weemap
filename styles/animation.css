@@ -1,0 +1,13 @@
+.fade-in-element {
+    /* Initial state: invisible and slightly down */
+    opacity: 0;
+    transform: translateY(30px);
+    /* Base transition for smooth effect */
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.fade-in-element.is-visible {
+    /* Final state: visible and in place */
+    opacity: 1;
+    transform: translateY(0);
+}
