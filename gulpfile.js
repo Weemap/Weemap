@@ -19,7 +19,7 @@ function html() {
 
 function css() {
     return gulp.src('**/*.css') 
-        .pipe(concat('style.min.css'))  // 1. JUNTAR: Cria um arquivo único chamado style.min.css
+        .pipe(concat('styles.css'))  // 1. JUNTAR: Cria um arquivo único chamado style.min.css
         .pipe(cleanCSS({compatibility: 'ie8'})) // 2. MINIFICAR: Comprime o CSS
         .pipe(gulp.dest('./build')); // 3. DESTINO: Move para dist/css
 }
