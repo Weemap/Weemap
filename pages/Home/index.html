@@ -5,26 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weemap - Gestão de Processos</title>
-    <link href="styles.css" rel="stylesheet"" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100..900&family=Inter:wght@100..900&display=swap" />
+    <link rel="preconnect" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400..900&display=swap" />
+    
+    <link href="styles.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="text-gray-800">
-    @@include('components/header.html')
+    @@include('../../components/header.html')
 
     <main>
-        @@include('components/inicio_section.html')
-        @@include('components/beneficios_section.html')
-        @@include('components/sobre_section.html')
-        @@include('components/recursos_section.html')
-        @@include('components/fale_conosco_section.html')
+        @@include('inicio_section.html')
+        @@include('beneficios_section.html')
+        @@include('sobre_section.html')
+        @@include('recursos_section.html')
+        @@include('fale_conosco_section.html')
     </main>
-    
-    @@include('components/footer.html')
+
+    @@include('../../components/footer.html')
 
     <script>
         const whatsappLink = 'https://wa.me/5521997208044?text=Olá!+Vim+pelo+site+e+gostaria+de+saber+mais+sobre+a+Weemap.';
-        const instagramLink = 'https://instagram.com/weemap_gestao'; 
+        const instagramLink = 'https://instagram.com/weemap_gestao';
 
         document.addEventListener('DOMContentLoaded', () => {
             const mobileMenuOpen = document.getElementById('mobile-menu-open');

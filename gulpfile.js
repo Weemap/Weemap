@@ -1,36 +1,72 @@
 const gulp = require('gulp');
+const fs = require('fs');
 const fileinclude = require('gulp-file-include');
-const concat = require('gulp-concat');       // 🌟 NOVO: Para juntar arquivos
+const concat = require('gulp-concat');
 const cleanCSS = require('gulp-clean-css');
 
+const pages = fs.readdirSync('pages')
+    .filter(f => !f.includes('.'));
+
 function html() {
-    return gulp.src('./*.html') 
-        .pipe(fileinclude({
-            prefix: '@@', 
-            basepath: '@file' 
-        }))
-        .pipe(gulp.dest('./build')); 
+    const list = []
+
+    for (const folder of pages) {
+        const taskFunction = function () {
+            return gulp.src(`pages/${folder}/index.html`)
+                .pipe(fileinclude({
+                    prefix: '@@',
+                    basepath: '@file'
+                }))
+                .pipe(gulp.dest(`./build/${folder}`))
+        };
+
+        Object.defineProperty(taskFunction, 'name', { 
+            value: `processHTML_${folder}`, 
+            writable: false
+        });
+        
+        list.push(taskFunction);
+    }
+
+    return list
 }
 
-// function css() {
-//     return gulp.src('**/*.css') 
-//         .pipe(gulp.dest('./build/css')); 
-// }
-
 function css() {
-    return gulp.src('**/*.css') 
-        .pipe(concat('styles.css'))  // 1. JUNTAR: Cria um arquivo único chamado style.min.css
-        .pipe(cleanCSS({compatibility: 'ie8'})) // 2. MINIFICAR: Comprime o CSS
-        .pipe(gulp.dest('./build')); // 3. DESTINO: Move para dist/css
+    const list = []
+
+    for (const folder of pages) {
+        const taskFunction = function () {
+            return gulp.src(`pages/${folder}/*.css`)
+                .pipe(concat('styles.css'))
+                .pipe(cleanCSS({ compatibility: 'ie8' }))
+                .pipe(gulp.dest(`./build/${folder}`))
+        };
+
+        Object.defineProperty(taskFunction, 'name', { 
+            value: `processCSS_${folder}`, 
+            writable: false
+        });
+        
+        list.push(taskFunction);
+    }
+    
+    return list
 }
 
 function assets() {
-    // Pega todos os arquivos dentro da pasta src/assets/ e suas subpastas
-    return gulp.src('assets/*') 
-        .pipe(gulp.dest('build/assets')); 
+    const srcDir = 'assets';
+    const destDir = 'build/assets';
+    
+    fs.cpSync(srcDir, destDir, { recursive: true }, err => {
+        if (err !== null) {
+            console.error(`Erro ao copiar ${srcDir} para ${destDir}:`, err);
+            throw err;
+        }
+    })
+
+    return Promise.resolve();
 }
 
-exports.build = gulp.parallel(html, css, assets);
+exports.build = gulp.parallel(html(), css(), assets);
 
-// Define a tarefa padrão (se você rodar apenas 'npm start' ou 'gulp')
 exports.default = exports.build;
