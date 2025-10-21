@@ -1,0 +1,19 @@
+#hero {
+    background-color: var(--secondary);
+    color: var(--text-color);
+}
+
+#hero div {
+    padding: 20px;
+    margin: clamp(20px, 5%, 120px) 0;
+}
+
+
+#hero div img {
+    margin-bottom: 10px;
+}
+
+#hero div p {
+    margin-bottom: 30px;
+}
+
