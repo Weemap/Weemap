@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weemap - Gestão de Processos</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100..900&family=Inter:wght@100..900&display=swap" />
+    <link rel="preconnect" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400..900&display=swap" />
+    
+    <link href="Home/styles.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="text-gray-800">
+    @@include('../components/Header/header.html')
+
+    <main>
+        @@include('Home/inicio_section.html')
+        @@include('Home/beneficios_section.html')
+        @@include('Home/sobre_section.html')
+        @@include('Home/recursos_section.html')
+        @@include('Home/fale_conosco_section.html')
+    </main>
+
+    @@include('../components/Footer/footer.html')
+
+    <script>
+        const whatsappLink = 'https://wa.me/5521997208044?text=Olá!+Vim+pelo+site+e+gostaria+de+saber+mais+sobre+a+Weemap.';
+        const instagramLink = 'https://instagram.com/weemap_gestao';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuOpen = document.getElementById('mobile-menu-open');
+            const mobileMenuClose = document.getElementById('mobile-menu-close');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelectorAll('nav a');
+
+            // Elements for the new Contact Form logic
+            const emailFormTrigger = document.getElementById('email-form-trigger');
+            const emailFormContainer = document.getElementById('email-form-container');
+            const contactOptions = document.getElementById('contact-options');
+            const contactForm = document.getElementById('contact-form');
+            const formCancelButton = document.getElementById('form-cancel-button');
+            const submissionMessage = document.getElementById('submission-message');
+            const submissionOkButton = document.getElementById('submission-ok-button');
+
+
+            // --- Form Interaction Logic ---
+
+            // Function to show the form and hide the buttons
+            const showForm = () => {
+                contactOptions.classList.add('hidden');
+                emailFormContainer.classList.remove('hidden');
+                // Scroll to the form for better UX on mobile
+                emailFormContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            };
+
+            // Function to hide the form and show the buttons
+            const hideForm = () => {
+                emailFormContainer.classList.add('hidden');
+                submissionMessage.classList.add('hidden');
+                contactOptions.classList.remove('hidden');
+                // Clear the form fields for next use
+                contactForm.reset();
+            };
+
+            // Event listener to open the form
+            emailFormTrigger.addEventListener('click', showForm);
+
+            // Event listener to cancel and close the form
+            formCancelButton.addEventListener('click', hideForm);
+
+            // Event listener for form submission
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // --- MOCK Submission Logic ---
+                // In a real application, you would send this data to a backend endpoint here.
+                const formData = new FormData(contactForm);
+                const data = Object.fromEntries(formData.entries());
+
+                // Console log the data to show it was collected (for demonstration purposes)
+                console.log('Dados do Formulário Coletados (Simulação de Envio):', data);
+
+                // Show success message and hide the form
+                emailFormContainer.classList.add('hidden');
+                submissionMessage.classList.remove('hidden');
+
+                // Scroll to the submission message
+                submissionMessage.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+
+            // Event listener to close the submission message and reset
+            submissionOkButton.addEventListener('click', hideForm);
+
+
+            // --- Mobile Menu Logic ---
+            const toggleMobileMenu = () => {
+                mobileMenu.classList.toggle('hidden');
+                document.body.classList.toggle('overflow-hidden'); // Prevent background scrolling
+            };
+
+            mobileMenuOpen.addEventListener('click', toggleMobileMenu);
+            mobileMenuClose.addEventListener('click', toggleMobileMenu);
+
+            // Close mobile menu when a link is clicked
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        toggleMobileMenu();
+                    }
+                });
+            });
+
+            // --- Smooth Scrolling ---
+            navLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId && targetId.startsWith('#')) {
+                        e.preventDefault();
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+
+
+            // --- Fade-in Animations (Intersection Observer) ---
+            const faders = document.querySelectorAll('.fade-in-element');
+
+            const appearOptions = {
+                threshold: 0.2, // Disparar quando 20% do elemento estiver visível
+                rootMargin: "0px 0px -50px 0px" // Margem para disparar um pouco antes de chegar ao fim
+            };
+
+            const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    } else {
+                        const target = entry.target;
+                        // Pega o valor do data-delay (em milissegundos) ou usa 0
+                        const delay = target.getAttribute('data-delay') || '0';
+
+                        // Aplica o delay na transição do elemento
+                        target.style.transitionDelay = `${delay}ms`;
+
+                        // Adiciona a classe que move o elemento para o estado visível
+                        target.classList.add('is-visible');
+
+                        // Para de observar o elemento
+                        observer.unobserve(target);
+                    }
+                });
+            }, appearOptions);
+
+            // Observa todos os elementos marcados para animação
+            faders.forEach(fader => {
+                appearOnScroll.observe(fader);
+            });
+        });
+    </script>
+</body>
+
+</html>
