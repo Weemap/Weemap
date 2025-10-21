@@ -1,9 +1,13 @@
 {
-  "type": "module",
   "devDependencies": {
-    "esbuild": "0.25.11"
+    "gulp": "^5.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-cli": "^3.1.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-file-include": "^2.3.0"
   },
-   "scripts": {
-    "build": "node build.js"
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp"
   }
 }

@@ -1,0 +1,95 @@
+<header class="sticky top-0 z-50 bg-secondary shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4 md:justify-start md:space-x-10">
+
+                <div class="flex justify-start lg:w-0 lg:flex-1">
+                    <a href="#" class="flex items-center">
+                        <img src="/assets/logoV3.webp" alt="Weemap Logo" class="h-8 w-auto">
+                    </a>
+                </div>
+
+
+                <nav class="hidden md:flex space-x-10">
+                    <a href="#inicio" class="text-base font-medium text-white nav-link-animated">Início</a>
+                    <a href="#beneficios" class="text-base font-medium text-white nav-link-animated">Benefícios</a>
+                    <a href="#sobre" class="text-base font-medium text-white nav-link-animated">Sobre</a>
+                    <a href="#recursos" class="text-base font-medium text-white nav-link-animated">Recursos</a>
+                    <a href="#contato" class="text-base font-medium text-white nav-link-animated">Contato</a>
+                </nav>
+
+
+                <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+                    <button id="cta-button-desktop" onclick="window.open(whatsappLink, '_blank')"
+                        class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-lg shadow-sm text-base font-medium text-white weemap-gradient hover:opacity-90 transition duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#F86A09]">
+                        Fale Conosco
+                    </button>
+                </div>
+
+
+                <div class="-mr-2 -my-2 md:hidden">
+                    <button type="button" id="mobile-menu-open"
+                        class="bg-secondary rounded-md p-2 inline-flex items-center justify-center text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#F86A09]"
+                        aria-expanded="false">
+                        <span class="sr-only">Abrir Menu Principal</span>
+
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="mobile-menu"
+            class="hidden absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden z-40">
+            <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
+                <div class="pt-5 pb-6 px-5">
+                    <div class="flex items-center justify-between">
+                        <div>
+
+                            <img src="https://devmarcossilva.com/assets/logoV3.webp" alt="Weemap Logo"
+                                class="h-8 w-auto">
+                        </div>
+                        <div class="-mr-2">
+                            <button type="button" id="mobile-menu-close"
+                                class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#F86A09]">
+                                <span class="sr-only">Fechar menu</span>
+
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <nav class="grid gap-y-8">
+                            <a href="#inicio"
+                                class="text-base font-medium text-gray-900 hover:text-[#F86A09] transition duration-150 p-3 hover:bg-gray-50 rounded-lg">Início</a>
+                            <a href="#beneficios"
+                                class="text-base font-medium text-gray-900 hover:text-[#F86A09] transition duration-150 p-3 hover:bg-gray-50 rounded-lg">Benefícios</a>
+                            <a href="#sobre"
+                                class="text-base font-medium text-gray-900 hover:text-[#F86A09] transition duration-150 p-3 hover:bg-gray-50 rounded-lg">Sobre</a>
+                            <a href="#recursos"
+                                class="text-base font-medium text-gray-900 hover:text-[#F86A09] transition duration-150 p-3 hover:bg-gray-50 rounded-lg">Recursos</a>
+                            <a href="#contato"
+                                class="text-base font-medium text-gray-900 hover:text-[#F86A09] transition duration-150 p-3 hover:bg-gray-50 rounded-lg">Contato</a>
+                        </nav>
+                    </div>
+                </div>
+                <div class="py-6 px-5 space-y-6">
+                    <div>
+
+                        <button onclick="window.open(whatsappLink, '_blank')"
+                            class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-lg shadow-sm text-base font-medium text-white weemap-gradient hover:opacity-90 transition duration-200">
+                            Fale Conosco
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
