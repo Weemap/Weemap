@@ -1,6 +1,9 @@
 
 @import url("/styles/citation.css");
-@import url("/styles/navLink.css");
+/* @import url("/styles/navLink.css"); */
+
+@import url("../../components/Header/header.css");
+
 @import url("/styles/animation.css");
 
 :root {

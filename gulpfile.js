@@ -7,12 +7,21 @@ const cleanCSS = require('gulp-clean-css');
 const pages = fs.readdirSync('pages')
     .filter(f => !f.includes('.'));
 
+function processHomeRootTask() {
+    return gulp.src('pages/index.html')
+        .pipe(fileinclude({
+            prefix: '@@',
+            basepath: '@file'
+        }))
+        .pipe(gulp.dest('./build/')); 
+}
+    
 function html() {
     const list = []
 
     for (const folder of pages) {
         const taskFunction = function () {
-            return gulp.src(`pages/${folder}/index.html`)
+            return gulp.src(`pages/${folder}/*.html`)
                 .pipe(fileinclude({
                     prefix: '@@',
                     basepath: '@file'
@@ -67,6 +76,10 @@ function assets() {
     return Promise.resolve();
 }
 
-exports.build = gulp.parallel(html(), css(), assets);
+exports.build = gulp.parallel(
+    html(), 
+    css(), 
+    assets, 
+    processHomeRootTask);
 
 exports.default = exports.build;
