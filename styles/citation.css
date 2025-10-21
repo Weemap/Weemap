@@ -1,0 +1,30 @@
+.citation {
+    position: relative;
+    padding: 3rem 1.5rem; 
+    margin: 2rem auto;
+    max-width: 768px; 
+    text-align: center;
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--secondary-color);
+}
+
+.citation::before,
+.citation::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px; 
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 9999px;
+}
+
+.citation::before {
+    top: 0;
+}
+
+.citation::after {
+    bottom: 0;
+}

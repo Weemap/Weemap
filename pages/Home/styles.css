@@ -1,0 +1,106 @@
+
+@import url("/styles/citation.css");
+/* @import url("/styles/navLink.css"); */
+
+@import url("../../components/Header/header.css");
+
+@import url("/styles/animation.css");
+
+:root {
+    --primary-color: #F86A09; /* New Primary: Orange/Red */
+    --secondary-color: #152A3F; /* New Secondary: Dark Navy Blue */
+    --accent-color: #10b981; /* Keeping the secondary accent for features */
+}
+
+body {
+    font-family: 'Poppins', 'Inter', sans-serif;
+    background-color: #f9fafb;
+}
+
+.bg-secondary {
+    background-color: var(--secondary-color);
+}
+
+.text-secondary {
+    color: var(--secondary-color);
+}
+
+.border-secondary {
+    border-color: var(--secondary-color);
+}
+
+.font-weemap-brand {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.weemap-gradient {
+    background: linear-gradient(135deg, var(--primary-color), #e85a00);
+}
+
+.abstract-background::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 400px; 
+            height: 400px; 
+            background: var(--primary-color);
+            opacity: 0.25; 
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            transform: rotate(15deg);
+            z-index: -1; 
+            filter: blur(80px); 
+        }
+
+        /* Shape 2: Secondary Color Blob */
+        .abstract-background::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            width: 500px; 
+            height: 500px; 
+            background: var(--secondary-color);
+            opacity: 0.25; 
+            border-radius: 60% 40% 30% 70% / 70% 30% 60% 40%;
+            transform: rotate(-25deg);
+            z-index: -1; 
+            filter: blur(80px); 
+        }
+
+        /* --- ESTILOS CUSTOMIZADOS PARA OS RECURSOS --- */
+        .resource-step {
+            position: relative;
+            padding-left: 5rem; /* Espaço para o ícone */
+            margin-bottom: 2.5rem;
+        }
+
+        .resource-step-icon {
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3.5rem; /* 56px */
+            height: 3.5rem; /* 56px */
+            background-color: var(--primary-color);
+            border-radius: 9999px;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(248, 106, 9, 0.5); /* Sombra laranja */
+        }
+        
+        /* Linha vertical conectora (apenas entre os passos) */
+        .resource-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 1.75rem; /* Centro do círculo */
+            top: 4rem; 
+            bottom: -2.5rem; 
+            width: 2px;
+            background-color: rgba(255, 255, 255, 0.3); /* Linha clara para fundo escuro */
+        }
