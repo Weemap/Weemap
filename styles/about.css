@@ -1,0 +1,16 @@
+#about div {
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+#about div img {
+    width: 300px;
+    object-fit: contain;
+}
+
+#about div .about_ceo {
+    max-width: 500px;
+}
